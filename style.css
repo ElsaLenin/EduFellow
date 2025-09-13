@@ -1,0 +1,158 @@
+/* 🌸 Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #f9e6f0, #e6f7f9, #fdf6e3);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  color: #333;
+}
+
+/* 🌈 Animated Gradient Background */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌟 Card Layout (used for login, signup, chatbot) */
+.container, .chat-container {
+  width: 400px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  padding: 30px;
+  border-radius: 22px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container:hover, .chat-container:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.15);
+}
+
+/* 📝 Titles */
+h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  background: linear-gradient(135deg, #a3c4f3, #f9a1bc);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: #666;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+/* 🔘 Inputs */
+input {
+  width: 90%;
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #ddd;
+  border-radius: 14px;
+  outline: none;
+  font-size: 15px;
+  background: #fdfdfd;
+  transition: 0.3s ease;
+}
+
+input:focus {
+  border-color: #a3c4f3;
+  box-shadow: 0 0 10px rgba(163, 196, 243, 0.6);
+}
+
+/* ✨ Buttons */
+button {
+  width: 95%;
+  padding: 12px;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #a3c4f3, #f9a1bc);
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #f9a1bc, #a3c4f3);
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(249, 161, 188, 0.4);
+}
+
+/* 🔗 Links */
+.toggle-link {
+  margin-top: 15px;
+  display: block;
+  color: #f48fb1;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.toggle-link:hover {
+  color: #ff6f91;
+  text-decoration: underline;
+}
+
+/* 💬 Chat Window */
+.messages {
+  max-height: 400px;
+  overflow-y: auto;
+  margin-bottom: 12px;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  padding: 10px 15px;
+  border-radius: 16px;
+  margin: 8px 0;
+  max-width: 70%;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  animation: fadeInMsg 0.3s ease;
+}
+
+@keyframes fadeInMsg {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.user {
+  background: #a3c4f3;
+  color: white;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.bot {
+  background: #f9a1bc;
+  color: white;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+/* 📱 Responsive */
+@media (max-width: 500px) {
+  .container, .chat-container {
+    width: 90%;
+    padding: 20px;
+  }
+}

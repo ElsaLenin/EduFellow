@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduFellow - Splash Screen</title>
+  <style>
+    /* Full page reset */
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: "Poppins", sans-serif;
+    }
+
+    /* Background pastel gradient (light blue & pink) */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #c7f0ff, #ffc7e6);
+      background-size: 400% 400%;
+      animation: gradientBG 10s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Splash container */
+    .splash {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    /* Logo style (circle) */
+    .splash img {
+      width: 160px;         /* same width */
+      height: 160px;        /* same height */
+      border-radius: 50%;   /* makes it circular */
+      object-fit: cover;    /* ensures image fills circle */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+      animation: bounce 2s infinite;
+    }
+
+    /* App name */
+    .splash h1 {
+      margin-top: 25px;
+      font-size: 32px;
+      color: #444;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    /* Fade in animation */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Bounce animation for logo */
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+  </style>
+  <script>
+    // Redirect to login.html after 5 seconds
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 5000);
+  </script>
+</head>
+<body>
+  <div class="splash">
+    <img src="logo.png" alt="EduFellow App Logo">
+    <h1>EduFellow</h1>
+  </div>
+</body>
+</html>
